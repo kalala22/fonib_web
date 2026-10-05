@@ -199,7 +199,7 @@
 
 /* Animations FONIB */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes float-slow {
@@ -209,12 +209,17 @@
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
-.animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.animate-fade-up { animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
 .animate-spin-slow { animation: spin-slow 40s linear infinite; }
-.delay-150 { animation-delay: 150ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-150 { animation-delay: 80ms; }
+.delay-300 { animation-delay: 120ms; }
+.delay-500 { animation-delay: 160ms; }
+
+@media (max-width: 640px) {
+  .animate-fade-up { animation: fade-up 0.25s ease-out both; }
+  .delay-150, .delay-300, .delay-500 { animation-delay: 0ms !important; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up, .animate-float-slow, .animate-spin-slow { animation: none; }
