@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import { pillars } from '@/lib/site'
 import { SectionHeading } from '@/components/sections/section-heading'
+import { RevealGroup, RevealItem } from '@/components/motion/reveal'
 
 /** Piliers d'intervention (<FeatureCards />). */
 export function Pillars() {
   return (
     <section id="piliers" className="mx-auto max-w-7xl px-5 py-28 lg:px-8">
       <SectionHeading eyebrow="Nos piliers d'intervention" title={<>Deux piliers, une même <span className="italic text-fonib-orange">devise</span></>} />
-      <div className="mt-16 grid gap-8 md:grid-cols-2">
+      <RevealGroup className="mt-16 grid gap-8 md:grid-cols-2">
         {pillars.map((p, i) => (
-          <article key={p.title} className="group relative overflow-hidden rounded-[2.5rem] bg-fonib-ink text-white shadow-2xl">
+          <RevealItem key={p.title}>
+          <article className="group relative h-full overflow-hidden rounded-[2.5rem] bg-fonib-ink text-white shadow-2xl">
             <div className="relative h-80 overflow-hidden sm:h-96">
               <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-fonib-ink via-fonib-ink/30 to-transparent" />
@@ -21,8 +23,9 @@ export function Pillars() {
               <p className="mt-4 max-w-md leading-relaxed text-white/70">« {p.text} »</p>
             </div>
           </article>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </section>
   )
 }

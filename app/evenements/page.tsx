@@ -5,6 +5,7 @@ import { Calendar, MapPin } from 'lucide-react'
 import { PageHero } from '@/components/sections/page-hero'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { brand, events } from '@/lib/site'
+import { RevealGroup, RevealItem } from '@/components/motion/reveal'
 
 export const metadata: Metadata = {
   title: 'Événements',
@@ -56,9 +57,10 @@ export default function EventsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {events.map((e, idx) => (
-            <Card key={idx} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition hover:-translate-y-2">
+            <RevealItem key={idx}>
+            <Card className="group h-full overflow-hidden rounded-3xl border-none bg-white shadow-xl transition hover:-translate-y-2">
               <div className="relative h-52 overflow-hidden">
                 <Image src={e.image} alt={e.title} fill sizes="(min-width: 768px) 25vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -78,8 +80,9 @@ export default function EventsPage() {
                 </Link>
               </CardFooter>
             </Card>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
     </>
   )

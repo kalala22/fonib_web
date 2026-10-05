@@ -6,6 +6,7 @@ import { PageHero } from '@/components/sections/page-hero'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { brand, projects } from '@/lib/site'
+import { RevealGroup, RevealItem } from '@/components/motion/reveal'
 
 export const metadata: Metadata = {
   title: 'Nos Projets',
@@ -48,9 +49,10 @@ export default function ProjectsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-3">
+        <RevealGroup className="grid gap-10 md:grid-cols-3">
           {projects.map((p) => (
-            <Card key={p.title} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition hover:-translate-y-2">
+            <RevealItem key={p.title}>
+            <Card className="group h-full overflow-hidden rounded-3xl border-none bg-white shadow-xl transition hover:-translate-y-2">
               <div className="relative h-64 overflow-hidden">
                 <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <Badge className="absolute left-5 top-5 bg-fonib-orange uppercase tracking-wider text-white">
@@ -72,8 +74,9 @@ export default function ProjectsPage() {
                 </Link>
               </CardFooter>
             </Card>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </section>
     </>
   )

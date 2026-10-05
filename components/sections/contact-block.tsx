@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { contact } from '@/lib/site'
+import { Reveal } from '@/components/motion/reveal'
 
 /** Bloc & formulaire de contact (<ContactBlock />) du PDF. */
 export function ContactBlock() {
@@ -38,7 +39,7 @@ export function ContactBlock() {
           description="Vous souhaitez collaborer, poser une question ou devenir bénévole ? Remplissez ce formulaire et notre équipe vous recontactera sous peu."
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-12">
+        <Reveal className="mt-16 grid gap-12 lg:grid-cols-12">
           {/* Informations de contact */}
           <div className="flex flex-col justify-between rounded-3xl bg-fonib-ink p-8 text-white shadow-2xl lg:col-span-5 lg:p-10">
             <div>
@@ -115,7 +116,7 @@ export function ContactBlock() {
               </form>
             </CardContent>
           </Card>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

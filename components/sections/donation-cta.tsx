@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { ArrowRight, Heart } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
+import { Reveal } from '@/components/motion/reveal'
 
 const amounts = [10, 25, 50, 100]
 
@@ -16,6 +17,7 @@ export function DonationCta() {
 
   return (
     <section className="mx-auto max-w-7xl px-5 py-28 lg:px-8">
+      <Reveal>
       <div className="relative overflow-hidden rounded-[2.5rem] bg-fonib-ink p-8 text-white shadow-2xl sm:p-14 lg:flex lg:items-center lg:justify-between lg:gap-12">
         <div aria-hidden className="absolute -right-20 -top-20 size-96 rounded-full bg-fonib-orange/20 blur-3xl" />
         <div aria-hidden className="absolute -left-20 -bottom-20 size-96 rounded-full bg-fonib-blue/20 blur-3xl" />
@@ -59,6 +61,7 @@ export function DonationCta() {
           </button>
         </div>
       </div>
+      </Reveal>
     </section>
   )
 }

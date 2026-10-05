@@ -7,6 +7,7 @@ import { ArrowRight, Compass, Heart, Users, Target } from 'lucide-react'
 import { SectionHeading } from '@/components/sections/section-heading'
 import { about } from '@/lib/site'
 import { cn } from '@/lib/utils'
+import { Reveal } from '@/components/motion/reveal'
 
 const icons = {
   vision: Target,
@@ -28,7 +29,7 @@ export function AboutSection() {
         />
 
         {/* Section interactive split-screen */}
-        <div className="mt-20 grid gap-12 lg:grid-cols-12 lg:items-center">
+        <Reveal className="mt-20 grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* Menu interactif Vision / Action / Collaboration */}
           <div className="flex flex-col gap-4 lg:col-span-5">
             {about.blocks.map((b) => {
@@ -100,7 +101,7 @@ export function AboutSection() {
               )
             })}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

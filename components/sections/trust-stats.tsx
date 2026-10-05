@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { partners, partnersTitle } from '@/lib/site'
+import { Reveal } from '@/components/motion/reveal'
 
 /** Bandeau des partenaires (<TrustStats />) avec grands logos officiels. */
 export function TrustStats() {
@@ -7,7 +8,7 @@ export function TrustStats() {
 
   return (
     <section aria-label="Partenaires" className="relative z-10 px-5 py-10 lg:px-8">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-white p-8 lg:p-12 shadow-xl shadow-black/5 border border-black/5">
+      <Reveal className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-white p-8 lg:p-12 shadow-xl shadow-black/5 border border-black/5">
         <div className="flex flex-col items-center justify-center gap-8">
           <p className="text-[12px] font-bold uppercase tracking-[0.35em] text-fonib-orange">
             « {partnersTitle} »
@@ -29,7 +30,7 @@ export function TrustStats() {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
