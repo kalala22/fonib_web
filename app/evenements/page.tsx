@@ -4,16 +4,50 @@ import Link from 'next/link'
 import { Calendar, MapPin } from 'lucide-react'
 import { PageHero } from '@/components/sections/page-hero'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { events } from '@/lib/site'
+import { brand, events } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Événements',
-  description: 'Prochains événements et rassemblements de la Fondation Nicole Bwatshia.',
+  description: 'Rejoignez les événements, ateliers et rassemblements de la Fondation Nicole Bwatshia (FONIB) à Kinshasa et en RDC.',
+  alternates: {
+    canonical: '/evenements',
+  },
+  openGraph: {
+    title: `Événements · ${brand.short}`,
+    description: 'Ateliers, conférences et campagnes de sensibilisation de FONIB en RDC.',
+    url: `${brand.url}/evenements`,
+    images: [{ url: '/fonib-women.png', width: 1200, height: 630, alt: 'Événements - FONIB' }],
+  },
 }
+
+const eventsJsonLd = events.map((e) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: e.title,
+  location: {
+    '@type': 'Place',
+    name: e.place,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: e.place,
+      addressCountry: 'CD',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: brand.name,
+    url: brand.url,
+  },
+  image: `${brand.url}${e.image}`,
+}))
 
 export default function EventsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }}
+      />
       <PageHero
         eyebrow="Événements"
         title={<>Rejoignez-nous lors de nos prochains <span className="italic text-fonib-orange">rassemblements</span></>}

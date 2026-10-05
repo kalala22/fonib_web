@@ -3,16 +3,50 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PageHero } from '@/components/sections/page-hero'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { news } from '@/lib/site'
+import { brand, news } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Actualités',
-  description: 'Toutes les actualités et informations récentes de la Fondation Nicole Bwatshia.',
+  description: 'Toutes les actualités, communiqués et histoires d’impact de la Fondation Nicole Bwatshia (FONIB).',
+  alternates: {
+    canonical: '/actualites',
+  },
+  openGraph: {
+    title: `Actualités · ${brand.short}`,
+    description: 'Reportages, communiqués et histoires d’impact de FONIB sur le terrain en RDC.',
+    url: `${brand.url}/actualites`,
+    images: [{ url: '/fonib-hero.png', width: 1200, height: 630, alt: 'Actualités - FONIB' }],
+  },
 }
+
+const newsJsonLd = news.map((n) => ({
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: n.title,
+  description: n.excerpt,
+  image: [`${brand.url}${n.image}`],
+  author: {
+    '@type': 'Organization',
+    name: brand.name,
+    url: brand.url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: brand.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${brand.url}/logo-fonib.png`,
+    },
+  },
+}))
 
 export default function NewsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd) }}
+      />
       <PageHero
         eyebrow="Actualités & Média"
         title={<>Restez informés de notre <span className="italic text-fonib-orange">actualité</span></>}

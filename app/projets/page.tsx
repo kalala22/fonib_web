@@ -5,16 +5,41 @@ import { ArrowRight } from 'lucide-react'
 import { PageHero } from '@/components/sections/page-hero'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { projects } from '@/lib/site'
+import { brand, projects } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Nos Projets',
-  description: 'Découvrez les projets de la Fondation Nicole Bwatshia (FONIB) en République Démocratique du Congo.',
+  description: 'Découvrez les projets de la Fondation Nicole Bwatshia (FONIB) en RDC : éducation, soutien aux orphelins, parité et santé.',
+  alternates: {
+    canonical: '/projets',
+  },
+  openGraph: {
+    title: `Nos Projets · ${brand.short}`,
+    description: 'Actions concrètes de la Fondation FONIB pour le développement social et humain en RDC.',
+    url: `${brand.url}/projets`,
+    images: [{ url: '/fonib-family.png', width: 1200, height: 630, alt: 'Nos Projets - FONIB' }],
+  },
+}
+
+const projectsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Projets de la Fondation Nicole Bwatshia',
+  itemListElement: projects.map((p, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: p.title,
+    description: p.text,
+  })),
 }
 
 export default function ProjectsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+      />
       <PageHero
         eyebrow="Nos Projets"
         title={<>Des actions concrètes sur le <span className="italic text-fonib-orange">terrain</span></>}
