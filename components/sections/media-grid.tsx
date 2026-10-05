@@ -55,7 +55,7 @@ export function MediaGrid() {
 
         {/* Contenu Projets */}
         {tab === 'projets' && (
-          <div className="mt-16 grid gap-8 md:grid-cols-3 animate-fade-up">
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
             {projects.map((p) => (
               <Card key={p.title} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-60 overflow-hidden">
@@ -85,7 +85,7 @@ export function MediaGrid() {
 
         {/* Contenu Événements */}
         {tab === 'evenements' && (
-          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4 animate-fade-up">
+          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {events.map((e, idx) => (
               <Card key={idx} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
@@ -111,7 +111,7 @@ export function MediaGrid() {
 
         {/* Contenu Actualités */}
         {tab === 'actualites' && (
-          <div className="mt-16 grid gap-8 md:grid-cols-3 animate-fade-up">
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
             {news.map((n, idx) => (
               <Card key={idx} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative h-56 overflow-hidden">

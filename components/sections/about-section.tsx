@@ -74,7 +74,7 @@ export function AboutSection() {
               if (b.key !== activeTab) return null
               const Icon = icons[b.key as keyof typeof icons] || Compass
               return (
-                <div key={b.key} className="relative animate-fade-up">
+                <div key={b.key} className="relative">
                   <div className="flex items-center gap-3 text-fonib-orange">
                     <Icon className="size-7" />
                     <span className="text-xs font-bold uppercase tracking-[0.25em]">{b.title}</span>

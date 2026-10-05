@@ -14,7 +14,7 @@ export function HomeHero() {
       <div aria-hidden className="absolute -right-20 bottom-0 -z-10 size-[560px] rounded-full bg-fonib-green/25 blur-[120px]" />
 
       <div className="mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-5 pb-20 pt-32 lg:grid-cols-[1.15fr_1fr] lg:px-8 lg:pb-24">
-        <div className="animate-fade-up">
+        <div>
           <span className="inline-flex items-center gap-2 rounded-full rounded-bl-none bg-fonib-orange px-5 py-2 text-[10px] font-bold uppercase tracking-[0.25em] shadow-lg shadow-fonib-orange/30">
             Fondation Nicole Bwatshia
           </span>
@@ -47,7 +47,7 @@ export function HomeHero() {
         </div>
 
         {/* Portrait de la présidente */}
-        <div className="relative mx-auto w-full max-w-md self-end animate-fade-up delay-300 lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-md self-end lg:max-w-none">
           <div aria-hidden className="absolute inset-x-6 bottom-0 top-16 rounded-t-full bg-gradient-to-b from-fonib-green/70 via-fonib-green/30 to-transparent" />
           <div aria-hidden className="absolute inset-x-0 bottom-0 top-8 animate-spin-slow rounded-full border border-dashed border-white/15" />
           <Image
