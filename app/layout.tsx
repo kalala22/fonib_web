@@ -48,9 +48,10 @@ export const metadata: Metadata = {
     description: 'Investir dans le capital humain et les valeurs sociétales en République Démocratique du Congo.',
     images: [
       {
-        url: '/fonib-hero.webp',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: `${brand.short} — ${brand.name}`,
       },
     ],
@@ -59,11 +60,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${brand.short} — ${brand.name}`,
     description: 'Investir dans le capital humain et les valeurs sociétales en RDC.',
-    images: ['/fonib-hero.webp'],
+    images: ['/og-image.png'],
   },
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    shortcut: '/icon.svg',
+    icon: [
+      { url: '/icon.png', sizes: '256x256', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/icon.png',
     apple: '/apple-icon.png',
   },
 }

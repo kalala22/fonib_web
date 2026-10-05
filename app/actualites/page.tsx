@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: `Actualités · ${brand.short}`,
     description: 'Reportages, communiqués et histoires d’impact de FONIB sur le terrain en RDC.',
     url: `${brand.url}/actualites`,
-    images: [{ url: '/fonib-hero.webp', width: 1200, height: 630, alt: 'Actualités - FONIB' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Actualités - FONIB' }],
   },
 }
 

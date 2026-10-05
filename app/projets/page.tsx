@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: `Nos Projets · ${brand.short}`,
     description: 'Actions concrètes de la Fondation FONIB pour le développement social et humain en RDC.',
     url: `${brand.url}/projets`,
-    images: [{ url: '/fonib-family.webp', width: 1200, height: 630, alt: 'Nos Projets - FONIB' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nos Projets - FONIB' }],
   },
 }
 

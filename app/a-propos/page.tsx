@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: `À Propos · ${brand.short}`,
     description: 'Découvrez la vision, la mission et l’action sociale de la Fondation Nicole Bwatshia (FONIB) en RDC.',
     url: `${brand.url}/a-propos`,
-    images: [{ url: '/fonib-women.webp', width: 1200, height: 630, alt: 'À Propos - FONIB' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'À Propos - FONIB' }],
   },
 }
 
