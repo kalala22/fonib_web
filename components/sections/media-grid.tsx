@@ -25,7 +25,7 @@ export function MediaGrid() {
 
         {/* Tab navigation */}
         <div className="mt-12 flex justify-center">
-          <div className="inline-flex rounded-full bg-white p-1.5 shadow-lg shadow-black/5 border border-black/5">
+          <div className="inline-flex rounded-full bg-white p-1.5  shadow-lg shadow-black/5 border border-black/5">
             {[
               { id: 'projets', label: 'Projets', icon: FolderHeart },
               { id: 'evenements', label: 'Événements', icon: Calendar },
