@@ -34,7 +34,7 @@ export const hero = {
   motto: brand.motto,
   text: "La Fondation Nicole Bwatshia agit pour un changement profond en République Démocratique du Congo en investissant dans le capital humain et les valeurs sociétales. À travers des actions concrètes dans l'éducation, le soutien aux orphelins, la santé et la lutte contre la malnutrition, FONIB rassemble acteurs locaux et bénévoles pour améliorer l'environnement communautaire. Son approche repose sur une vision altruiste et une philosophie innovante : \"Connaître pour être, être pour connaître\".",
   signature: { name: 'Mme Nicole BWATSHIA', title: 'Présidente de la Fondation' },
-  portrait: '/presidente.png',
+  portrait: '/presidente.webp',
 }
 
 export const partnersTitle = 'Ils nous ont fait confiance'
@@ -50,12 +50,12 @@ export const pillars = [
   {
     title: 'Connaître pour être',
     text: 'Aider une famille est une initiative visant à apporter un soutien matériel et émotionnel aux familles dans le besoin.',
-    image: '/fonib-family.png',
+    image: '/fonib-family.webp',
   },
   {
     title: 'Être pour connaître',
     text: "Cette initiative favorise le bien-être des enfants en leur fournissant les ressources pour s'épanouir.",
-    image: '/fonib-education.png',
+    image: '/fonib-education.webp',
   },
 ]
 
@@ -85,22 +85,22 @@ export const about = {
 
 /** 7. Projets, Évènements, Actualités (contenu de démonstration, à remplacer) */
 export const projects = [
-  { slug: 'aider-une-famille', title: 'Aider une famille', category: 'Familles', image: '/fonib-family.png', text: pillars[0].text },
-  { slug: 'bien-etre-enfants', title: "Bien-être de l'enfant", category: 'Éducation', image: '/fonib-education.png', text: pillars[1].text },
-  { slug: 'droits-de-la-femme', title: 'Droits de la femme', category: 'Parité', image: '/fonib-women.png', text: 'Promotion des droits de la femme pour une société plus équitable et paritaire.' },
+  { slug: 'aider-une-famille', title: 'Aider une famille', category: 'Familles', image: '/fonib-family.webp', text: pillars[0].text },
+  { slug: 'bien-etre-enfants', title: "Bien-être de l'enfant", category: 'Éducation', image: '/fonib-education.webp', text: pillars[1].text },
+  { slug: 'droits-de-la-femme', title: 'Droits de la femme', category: 'Parité', image: '/fonib-women.webp', text: 'Promotion des droits de la femme pour une société plus équitable et paritaire.' },
 ]
 
 export const events = [
-  { title: 'Journée de sensibilisation aux droits fondamentaux', date: 'À venir', place: 'Kinshasa', image: '/fonib-women.png' },
-  { title: 'Distribution de kits scolaires', date: 'À venir', place: 'Kinshasa', image: '/fonib-education.png' },
-  { title: 'Lutte contre la malnutrition avec PRONANUT', date: 'À venir', place: 'Kinshasa', image: '/fonib-family.png' },
-  { title: 'Rencontre communautaire FONIB', date: 'À venir', place: 'Kinshasa', image: '/fonib-hero.png' },
+  { title: 'Journée de sensibilisation aux droits fondamentaux', date: 'À venir', place: 'Kinshasa', image: '/fonib-women.webp' },
+  { title: 'Distribution de kits scolaires', date: 'À venir', place: 'Kinshasa', image: '/fonib-education.webp' },
+  { title: 'Lutte contre la malnutrition avec PRONANUT', date: 'À venir', place: 'Kinshasa', image: '/fonib-family.webp' },
+  { title: 'Rencontre communautaire FONIB', date: 'À venir', place: 'Kinshasa', image: '/fonib-hero.webp' },
 ]
 
 export const news = [
-  { title: 'FONIB aux côtés des orphelins', excerpt: 'Soutien aux orphelins et à leurs familles d’accueil.', image: '/fonib-hero.png' },
-  { title: 'Accès à l’éducation', excerpt: 'Des ressources pour que chaque enfant puisse s’épanouir.', image: '/fonib-education.png' },
-  { title: 'Santé communautaire', excerpt: 'Actions concrètes de santé et de nutrition.', image: '/fonib-family.png' },
+  { title: 'FONIB aux côtés des orphelins', excerpt: 'Soutien aux orphelins et à leurs familles d’accueil.', image: '/fonib-hero.webp' },
+  { title: 'Accès à l’éducation', excerpt: 'Des ressources pour que chaque enfant puisse s’épanouir.', image: '/fonib-education.webp' },
+  { title: 'Santé communautaire', excerpt: 'Actions concrètes de santé et de nutrition.', image: '/fonib-family.webp' },
 ]
 
 /** 8 & 9. Contact & footer */

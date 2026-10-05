@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: `Événements · ${brand.short}`,
     description: 'Ateliers, conférences et campagnes de sensibilisation de FONIB en RDC.',
     url: `${brand.url}/evenements`,
-    images: [{ url: '/fonib-women.png', width: 1200, height: 630, alt: 'Événements - FONIB' }],
+    images: [{ url: '/fonib-women.webp', width: 1200, height: 630, alt: 'Événements - FONIB' }],
   },
 }
 
@@ -52,7 +52,7 @@ export default function EventsPage() {
         eyebrow="Événements"
         title={<>Rejoignez-nous lors de nos prochains <span className="italic text-fonib-orange">rassemblements</span></>}
         description="Ateliers, conférences, campagnes de sensibilisation et actions communautaires à Kinshasa et en provinces."
-        image="/fonib-women.png"
+        image="/fonib-women.webp"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">

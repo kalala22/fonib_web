@@ -7,7 +7,7 @@ type PageHeroProps = {
   image?: string
 }
 
-export function PageHero({ eyebrow, title, description, image = '/fonib-hero.png' }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, image = '/fonib-hero.webp' }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-fonib-ink text-white pt-40 pb-24 lg:pt-48 lg:pb-32">
       <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />

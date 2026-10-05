@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Investir dans le capital humain et les valeurs sociétales en République Démocratique du Congo.',
     images: [
       {
-        url: '/fonib-hero.png',
+        url: '/fonib-hero.webp',
         width: 1200,
         height: 630,
         alt: `${brand.short} — ${brand.name}`,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${brand.short} — ${brand.name}`,
     description: 'Investir dans le capital humain et les valeurs sociétales en RDC.',
-    images: ['/fonib-hero.png'],
+    images: ['/fonib-hero.webp'],
   },
   icons: {
     icon: [
@@ -82,7 +82,7 @@ const jsonLd = {
   alternateName: brand.short,
   url: brand.url,
   logo: `${brand.url}${fonibLogo}`,
-  image: `${brand.url}/fonib-hero.png`,
+  image: `${brand.url}/fonib-hero.webp`,
   description: hero.text,
   slogan: brand.motto,
   address: {

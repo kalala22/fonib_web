@@ -8,7 +8,7 @@ export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-fonib-ink text-white">
       {/* Fond : photo + voiles + halos colorés */}
-      <Image src="/fonib-hero.png" alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
+      <Image src="/fonib-hero.webp" alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fonib-ink via-fonib-ink/90 to-fonib-ink/40" />
       <div aria-hidden className="absolute -left-40 top-1/3 -z-10 size-[520px] rounded-full bg-fonib-orange/20 blur-[120px]" />
       <div aria-hidden className="absolute -right-20 bottom-0 -z-10 size-[560px] rounded-full bg-fonib-green/25 blur-[120px]" />
@@ -56,6 +56,7 @@ export function HomeHero() {
             width={370}
             height={600}
             priority
+            sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 78vw"
             className="relative mx-auto h-auto w-[78%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
           />
           <div className="absolute bottom-8 left-0 right-0 mx-auto w-fit animate-float-slow rounded-2xl border border-white/15 bg-white/10 px-6 py-4 text-center shadow-2xl backdrop-blur-xl sm:left-auto sm:right-0 sm:mx-0">

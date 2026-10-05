@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: `Actualités · ${brand.short}`,
     description: 'Reportages, communiqués et histoires d’impact de FONIB sur le terrain en RDC.',
     url: `${brand.url}/actualites`,
-    images: [{ url: '/fonib-hero.png', width: 1200, height: 630, alt: 'Actualités - FONIB' }],
+    images: [{ url: '/fonib-hero.webp', width: 1200, height: 630, alt: 'Actualités - FONIB' }],
   },
 }
 
@@ -51,7 +51,7 @@ export default function NewsPage() {
         eyebrow="Actualités & Média"
         title={<>Restez informés de notre <span className="italic text-fonib-orange">actualité</span></>}
         description="Retrouvez l’ensemble des reportages, communiqués et histoires d’impact de FONIB sur le terrain."
-        image="/fonib-hero.png"
+        image="/fonib-hero.webp"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
