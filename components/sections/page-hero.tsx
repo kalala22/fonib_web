@@ -10,7 +10,8 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, description, image = '/fonib-hero.webp' }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-fonib-ink text-white pt-40 pb-24 lg:pt-48 lg:pb-32">
-      <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
+      <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" loading="eager"
+        fetchPriority="high" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fonib-ink/90 via-fonib-ink/80 to-fonib-ink" />
       <div aria-hidden className="absolute -right-20 top-1/2 -z-10 size-96 -translate-y-1/2 rounded-full bg-fonib-orange/20 blur-3xl" />
 

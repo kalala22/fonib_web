@@ -23,6 +23,8 @@ export function TrustStats() {
                     alt={p.name}
                     width={220}
                     height={100}
+                    loading="eager"
+                    fetchPriority="high"
                     className="h-20 sm:h-24 w-auto max-w-[220px] object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 drop-shadow-sm"
                   />
                 </div>

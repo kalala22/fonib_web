@@ -56,6 +56,8 @@ export function HomeHero() {
             width={370}
             height={600}
             priority
+            loading="eager"
+            fetchPriority="high"
             sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 78vw"
             className="relative mx-auto h-auto w-[78%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
           />
