@@ -10,11 +10,10 @@ import './globals.css'
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', style: ['normal', 'italic'], display: 'swap' })
 
-const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || brand.url
-const siteUrl = rawUrl.startsWith('http://') || rawUrl.startsWith('https://') ? rawUrl : `https://${rawUrl}`
+const siteUrl = process.env.NEXT_SITE_URL;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl!),
   alternates: {
     canonical: '/',
   },
