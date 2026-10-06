@@ -188,6 +188,7 @@
 }
 
 .partner-marquee {
+  will-change: transform;
   animation: partner-marquee 24s linear infinite;
 }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Heart, Menu } from 'lucide-react'
@@ -33,7 +34,7 @@ export function Header() {
         )}
       >
         <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-[1.03]" aria-label={`${brand.short} — accueil`}>
-          <img src={fonibLogo} alt={`${brand.short} — ${brand.name}`} className="h-11 w-11 rounded-full bg-white object-contain p-0.5" />
+          <Image src={fonibLogo} alt={`${brand.short} — ${brand.name}`} width={44} height={44} priority className="h-11 w-11 rounded-full bg-white object-contain p-0.5" />
           <span className="leading-tight text-white">
             <span className="block text-sm font-extrabold tracking-[0.2em]">{brand.short}</span>
             <span className="hidden text-[10px] font-medium tracking-wide text-white/60 sm:block">{brand.name}</span>
@@ -84,7 +85,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="top" className="h-auto self-start w-full border-b border-white/15 bg-fonib-ink/95 p-4 text-white shadow-2xl backdrop-blur-2xl rounded-none">
               <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                <img src={fonibLogo} alt={brand.name} className="h-8 w-8 rounded-full bg-white object-contain p-0.5" />
+                <Image src={fonibLogo} alt={brand.name} width={32} height={32} className="h-8 w-8 rounded-full bg-white object-contain p-0.5" />
                 <div>
                   <SheetTitle className="text-xs font-extrabold tracking-[0.15em] text-white">{brand.short}</SheetTitle>
                   <p className="text-[10px] text-white/50">{brand.name}</p>

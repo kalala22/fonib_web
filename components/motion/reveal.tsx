@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -12,10 +13,16 @@ type BaseProps = {
 /** Apparition simple au scroll (une seule fois). */
 export function Reveal({ children, className, y = 16 }: BaseProps & { y?: number }) {
   const reduce = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y }}
+      initial={mounted && !reduce ? { opacity: 0, y } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.45, ease: EASE }}
@@ -38,11 +45,17 @@ const item: Variants = {
 /** Conteneur qui fait apparaître ses enfants <RevealItem> en cascade. */
 export function RevealGroup({ children, className }: BaseProps) {
   const reduce = useReducedMotion()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <motion.div
       className={className}
       variants={group}
-      initial={reduce ? false : 'hidden'}
+      initial={mounted && !reduce ? 'hidden' : false}
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}
     >
