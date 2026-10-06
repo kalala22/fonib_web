@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Contact · ${brand.short}`,
     description: 'Prenez contact avec la Fondation Nicole Bwatshia à Kinshasa, RDC.',
-    url: `${brand.url}/contact`,
+    url: '/contact',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact - FONIB' }],
   },
 }

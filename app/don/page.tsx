@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Faire un don · ${brand.short}`,
     description: 'Soutenez nos programmes sociaux, d’éducation et de santé en République Démocratique du Congo.',
-    url: `${brand.url}/don`,
+    url: '/don',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Faire un don - FONIB' }],
   },
 }

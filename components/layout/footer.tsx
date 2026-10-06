@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { SocialIcon } from '@/components/social-icon'
@@ -37,7 +38,7 @@ export function Footer() {
         <div className="grid gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-4">
-              <img src={fonibLogo} alt={brand.name} className="size-16 rounded-full bg-white object-contain p-1" />
+              <Image src={fonibLogo} alt={brand.name} width={64} height={64} className="size-16 rounded-full bg-white object-contain p-1" />
               <div>
                 <p className="text-lg font-extrabold tracking-[0.2em]">{brand.short}</p>
                 <p className="text-sm text-white/50">{brand.name}</p>

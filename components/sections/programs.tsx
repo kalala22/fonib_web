@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function Programs({ showIntro = true }: { showIntro?: boolean }) {
   return (
     <section className="bg-[#f7f5f0] px-5 py-28 lg:px-8 lg:py-40">
@@ -14,7 +16,7 @@ export function Programs({ showIntro = true }: { showIntro?: boolean }) {
         <div className="flex flex-col gap-10">
           <article className="sticky top-24 z-10 mx-auto grid w-full max-w-5xl min-h-[320px] overflow-hidden rounded-[30px] bg-white shadow-2xl shadow-black/10 lg:grid-cols-[2fr_3fr]">
             <div className="relative min-h-[220px] overflow-hidden">
-              <img src="/fonib-women.png" alt="Des femmes collaborent autour d'un projet d'autonomisation" className="absolute inset-0 size-full object-cover" />
+              <Image src="/fonib-women.webp" alt="Des femmes collaborent autour d'un projet d'autonomisation" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               <div className="absolute inset-0 bg-[#151515]/10" />
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
@@ -25,7 +27,7 @@ export function Programs({ showIntro = true }: { showIntro?: boolean }) {
           </article>
           <article className="sticky top-24 z-20 mx-auto grid w-full max-w-5xl min-h-[320px] overflow-hidden rounded-[30px] bg-white shadow-2xl shadow-black/10 lg:grid-cols-[3fr_2fr]">
             <div className="relative order-2 min-h-[220px] overflow-hidden">
-              <img src="/fonib-family.png" alt="Des entrepreneurs échangent autour d'une table de travail" className="absolute inset-0 size-full object-cover" />
+              <Image src="/fonib-family.webp" alt="Des entrepreneurs échangent autour d'une table de travail" fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
               <div className="absolute inset-0 bg-[#151515]/10" />
               <span className="absolute bottom-5 right-6 font-serif text-xs italic text-white/80">fonib</span>
             </div>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Nos Projets · ${brand.short}`,
     description: 'Actions concrètes de la Fondation FONIB pour le développement social et humain en RDC.',
-    url: `${brand.url}/projets`,
+    url: '/projets',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nos Projets - FONIB' }],
   },
 }

@@ -10,7 +10,7 @@ export const brand = {
   name: 'Fondation Nicole Bwatshia',
   short: 'FONIB',
   motto: 'Connaître pour être, Être pour connaître',
-  url: 'https://fonib.cd',
+  url: 'https://fonib.vercel.app',
 }
 
 /** 1. Navigation */
