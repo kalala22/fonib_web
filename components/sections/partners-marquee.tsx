@@ -16,6 +16,7 @@ export function PartnersMarquee() {
               height={80}
               loading="eager"
               fetchPriority="high"
+              unoptimized
               className="h-16 sm:h-20 w-auto object-contain transition-all hover:scale-105"
             />
           ))}

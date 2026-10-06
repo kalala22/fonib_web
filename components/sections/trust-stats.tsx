@@ -25,6 +25,7 @@ export function TrustStats() {
                     height={100}
                     loading="eager"
                     fetchPriority="high"
+                    unoptimized
                     className="h-20 sm:h-24 w-auto max-w-[220px] object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 drop-shadow-sm"
                   />
                 </div>
