@@ -29,7 +29,7 @@ export function Header() {
         className={cn(
           'mx-auto flex max-w-7xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 lg:px-6',
           scrolled
-            ? 'border border-white/10 bg-fonib-ink/85 shadow-2xl shadow-black/20 backdrop-blur-xl'
+            ? 'border border-white/10 bg-fonib-ink/95 shadow-2xl shadow-black/20 lg:bg-fonib-ink/85 lg:backdrop-blur-xl'
             : 'border border-transparent bg-transparent',
         )}
       >

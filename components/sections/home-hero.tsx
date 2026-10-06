@@ -10,8 +10,8 @@ export function HomeHero() {
       {/* Fond : photo + voiles + halos colorés */}
       <Image src="/fonib-hero.webp" alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-25" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fonib-ink via-fonib-ink/90 to-fonib-ink/40" />
-      <div aria-hidden className="absolute -left-40 top-1/3 -z-10 size-[520px] rounded-full bg-fonib-orange/20 blur-[120px]" />
-      <div aria-hidden className="absolute -right-20 bottom-0 -z-10 size-[560px] rounded-full bg-fonib-green/25 blur-[120px]" />
+      <div aria-hidden className="absolute -left-40 top-1/3 -z-10 hidden size-[520px] lg:block rounded-full bg-fonib-orange/20 blur-[120px]" />
+      <div aria-hidden className="absolute -right-20 bottom-0 -z-10 hidden size-[560px] lg:block rounded-full bg-fonib-green/25 blur-[120px]" />
 
       <div className="mx-auto grid min-h-[100svh] max-w-7xl items-center gap-10 px-5 pb-20 pt-32 lg:grid-cols-[1.15fr_1fr] lg:px-8 lg:pb-24">
         <div>
@@ -31,7 +31,7 @@ export function HomeHero() {
             <Link id="hero-cta-projets" href="/projets" className="group inline-flex items-center justify-center gap-2 rounded-full bg-fonib-orange px-8 py-4 font-semibold shadow-xl shadow-fonib-orange/25 transition hover:bg-white hover:text-fonib-ink">
               Découvrir nos projets <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link id="hero-cta-don" href="/don" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 font-semibold backdrop-blur-md transition hover:bg-white hover:text-fonib-ink">
+            <Link id="hero-cta-don" href="/don" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 font-semibold lg:backdrop-blur-md transition hover:bg-white hover:text-fonib-ink">
               Faire un don
             </Link>
           </div>
@@ -56,13 +56,10 @@ export function HomeHero() {
             width={370}
             height={600}
             priority
-            loading="eager"
-            fetchPriority="high"
-            unoptimized
             sizes="(min-width: 1024px) 370px, (min-width: 640px) 50vw, 78vw"
             className="relative mx-auto h-auto w-[78%] drop-shadow-[0_30px_40px_rgba(0,0,0,0.5)]"
           />
-          <div className="absolute bottom-8 left-0 right-0 mx-auto w-fit animate-float-slow rounded-2xl border border-white/15 bg-white/10 px-6 py-4 text-center shadow-2xl backdrop-blur-xl sm:left-auto sm:right-0 sm:mx-0">
+          <div className="absolute bottom-8 left-0 right-0 mx-auto w-fit animate-float-slow rounded-2xl border border-white/15 bg-fonib-ink/80 lg:bg-white/10 px-6 py-4 text-center shadow-2xl lg:backdrop-blur-xl sm:left-auto sm:right-0 sm:mx-0">
             <p className="font-display text-lg font-bold">{hero.signature.name}</p>
             <p className="text-xs uppercase tracking-[0.2em] text-fonib-orange">{hero.signature.title}</p>
           </div>

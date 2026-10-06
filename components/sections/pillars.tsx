@@ -13,9 +13,7 @@ export function Pillars() {
           <RevealItem key={p.title}>
             <article className="group relative h-full overflow-hidden rounded-[2.5rem] bg-fonib-ink text-white shadow-2xl">
               <div className="relative h-80 overflow-hidden sm:h-96">
-                <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="eager"
-                  fetchPriority="high" unoptimized />
+                <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-fonib-ink via-fonib-ink/30 to-transparent" />
                 <span className="absolute left-8 top-8 font-display text-7xl font-bold text-white/20">0{i + 1}</span>
               </div>

@@ -59,9 +59,7 @@ export function MediaGrid() {
             {projects.map((p) => (
               <Card key={p.title} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-60 overflow-hidden">
-                  <Image src={p.image} alt={p.title} loading="eager"
-                    fetchPriority="high"
-                    unoptimized fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   <Badge className="absolute left-5 top-5 bg-fonib-orange font-semibold uppercase tracking-wider text-white">
                     {p.category}
                   </Badge>
@@ -91,8 +89,7 @@ export function MediaGrid() {
             {events.map((e, idx) => (
               <Card key={idx} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={e.image} alt={e.title} fill sizes="(min-width: 768px) 25vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" loading="eager"
-                    fetchPriority="high" unoptimized />
+                  <Image src={e.image} alt={e.title} fill sizes="(min-width: 768px) 25vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <span className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs font-semibold text-white">
                     <MapPin className="size-3.5 text-fonib-orange" /> {e.place}
@@ -118,8 +115,7 @@ export function MediaGrid() {
             {news.map((n, idx) => (
               <Card key={idx} className="group overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative h-56 overflow-hidden">
-                  <Image src={n.image} alt={n.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" loading="eager"
-                    fetchPriority="high" unoptimized />
+                  <Image src={n.image} alt={n.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display text-xl font-bold">{n.title}</CardTitle>
