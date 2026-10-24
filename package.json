@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@12.3.4",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "dev:webpack": "next dev --webpack",
     "clean": "rm -rf .next",
-    "build": "payload generate:importmap && next build",
+    "build": "next build",
     "start": "next start",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap"
