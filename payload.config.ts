@@ -10,6 +10,7 @@ import { Media } from './collections/Media'
 import { Projects } from './collections/Projects'
 import { News } from './collections/News'
 import { Events } from './collections/Events'
+import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -50,6 +51,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.POSTGRES_URL || process.env.DATABASE_URI || '',
     },
+    prodMigrations: migrations,
   }),
   sharp,
 })
