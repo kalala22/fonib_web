@@ -1,2 +1,975 @@
-/* Custom styles for Payload Admin if needed */
+/* ==========================================================================
+   FONIB Admin Theme & Custom Dashboard Styles
+   Fondation Nicole Bwatshia
+   ========================================================================== */
 
+:root {
+  --fonib-orange: #ef9224;
+  --fonib-orange-hover: #d97706;
+  --fonib-blue: #4b9bc4;
+  --fonib-blue-hover: #0284c7;
+  --fonib-green: #1f9d6b;
+  --fonib-ink: #0f172a;
+  --fonib-slate: #1e293b;
+}
+
+/* --------------------------------------------------------------------------
+   Payload CMS Global Theme Overrides
+   -------------------------------------------------------------------------- */
+[data-theme='light'],
+html:not([data-theme='dark']) {
+  --theme-accent: #ef9224;
+  --theme-accent-hover: #d97706;
+  --theme-focus-ring: rgba(239, 146, 36, 0.4);
+  --theme-bg: #f8fafc;
+  --theme-text: #0f172a;
+  --theme-elevation-50: #ffffff;
+  --theme-elevation-100: #f1f5f9;
+  --theme-elevation-150: #e2e8f0;
+  --theme-elevation-200: #cbd5e1;
+}
+
+[data-theme='dark'] {
+  --theme-accent: #ef9224;
+  --theme-accent-hover: #f59e0b;
+  --theme-focus-ring: rgba(239, 146, 36, 0.5);
+  --theme-bg: #090d16;
+  --theme-elevation-50: #0f172a;
+  --theme-elevation-100: #1e293b;
+  --theme-elevation-150: #334155;
+  --theme-elevation-200: #475569;
+}
+
+/* Hide Payload's default collection cards on custom dashboard if rendered */
+.collection-cards,
+.dashboard__collections,
+.modular-dashboard,
+.dashboard .collection-group {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER BREADCRUMB LOGO / ICON FIX
+   -------------------------------------------------------------------------- */
+.step-nav__home {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.step-nav__home .graphic-icon,
+.step-nav__home img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.graphic-icon {
+  overflow: visible !important;
+}
+
+/* --------------------------------------------------------------------------
+   SIDEBAR CUSTOMIZATION (Navigation)
+   -------------------------------------------------------------------------- */
+.nav {
+  background-color: #0b1120 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.fonib-sidebar-header {
+  padding: 18px 20px 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.fonib-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fonib-sidebar-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ef9224 0%, #4b9bc4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(239, 146, 36, 0.35);
+  flex-shrink: 0;
+}
+
+.fonib-sidebar-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+}
+
+.fonib-sidebar-sub {
+  font-size: 10.5px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.fonib-sidebar-version {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background-color: rgba(31, 157, 107, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(31, 157, 107, 0.3);
+}
+
+.nav__group-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  color: #64748b !important;
+  margin-top: 14px !important;
+}
+
+.nav__link {
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #cbd5e1 !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  background-color: rgba(239, 146, 36, 0.12) !important;
+  color: #ffffff !important;
+}
+
+.nav__link--active {
+  border-left: 3px solid var(--fonib-orange) !important;
+  font-weight: 600 !important;
+}
+
+/* --------------------------------------------------------------------------
+   DASHBOARD WRAPPER & CONTAINER
+   -------------------------------------------------------------------------- */
+.fonib-dashboard-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 10px 0 40px 0;
+}
+
+/* Hero Banner */
+.fonib-dashboard-hero {
+  position: relative;
+  margin-bottom: 24px;
+  padding: 32px 36px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0b1120 0%, #1e293b 55%, #0f172a 100%);
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -5px rgba(11, 17, 32, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 960px) {
+  .fonib-dashboard-hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.fonib-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.fonib-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.fonib-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--fonib-orange);
+  box-shadow: 0 0 8px var(--fonib-orange);
+}
+
+.fonib-hero-title {
+  margin: 0 0 10px 0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.fonib-hero-motto {
+  margin: 0;
+  font-size: 13.5px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.fonib-hero-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.fonib-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fonib-btn-primary {
+  background-color: var(--fonib-orange);
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 146, 36, 0.35);
+}
+
+.fonib-btn-primary:hover {
+  background-color: var(--fonib-orange-hover);
+  transform: translateY(-1px);
+}
+
+.fonib-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fonib-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.fonib-btn-outline {
+  background: transparent;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.fonib-btn-outline:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   KPI METRIC CARDS
+   -------------------------------------------------------------------------- */
+.fonib-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .fonib-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .fonib-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.fonib-stat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 14px;
+  background-color: var(--theme-elevation-50, #ffffff);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  text-decoration: none;
+  color: inherit !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fonib-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
+  border-color: var(--fonib-orange);
+}
+
+.fonib-stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.fonib-stat-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fonib-stat-number-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.fonib-stat-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-stat-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.fonib-stat-pill.green {
+  background-color: rgba(31, 157, 107, 0.12);
+  color: #10b981;
+}
+
+.fonib-stat-pill.blue {
+  background-color: rgba(75, 155, 196, 0.12);
+  color: #0ea5e9;
+}
+
+.fonib-stat-pill.purple {
+  background-color: rgba(139, 92, 246, 0.12);
+  color: #a855f7;
+}
+
+.fonib-stat-pill.orange {
+  background-color: rgba(239, 146, 36, 0.12);
+  color: var(--fonib-orange);
+}
+
+.fonib-stat-desc {
+  font-size: 12px;
+  color: var(--theme-elevation-500, #64748b);
+  margin-bottom: 16px;
+}
+
+.fonib-stat-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--theme-elevation-150, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--fonib-orange);
+}
+
+.fonib-stat-arrow {
+  transition: transform 0.2s ease;
+}
+
+.fonib-stat-card:hover .fonib-stat-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   DUAL COLUMN WORKSPACE
+   -------------------------------------------------------------------------- */
+.fonib-main-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1040px) {
+  .fonib-main-split {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.fonib-left-rail,
+.fonib-right-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   RECENT CONTENT TABLE CARD
+   -------------------------------------------------------------------------- */
+.fonib-table-card {
+  border-radius: 14px;
+  background-color: var(--theme-elevation-50, #ffffff);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.fonib-table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--theme-elevation-150, #f1f5f9);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .fonib-table-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.fonib-table-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-table-sub {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-table-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+}
+
+.fonib-tab-btn {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--theme-elevation-500, #64748b) !important;
+  transition: all 0.2s ease;
+}
+
+.fonib-tab-btn.active,
+.fonib-tab-btn:hover {
+  background-color: var(--theme-elevation-50, #ffffff);
+  color: var(--theme-text, #0f172a) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fonib-table-responsive {
+  overflow-x: auto;
+}
+
+.fonib-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  text-align: left;
+}
+
+.fonib-table th {
+  padding: 12px 18px;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--theme-elevation-500, #64748b);
+  border-bottom: 1px solid var(--theme-elevation-150, #e2e8f0);
+}
+
+.fonib-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--theme-elevation-150, #f1f5f9);
+  vertical-align: middle;
+}
+
+.fonib-table tr:hover td {
+  background-color: rgba(239, 146, 36, 0.02);
+}
+
+.fonib-item-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fonib-thumb-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--theme-elevation-100, #f1f5f9);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  flex-shrink: 0;
+}
+
+.fonib-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fonib-item-title {
+  font-weight: 600;
+  color: var(--theme-text, #0f172a);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.fonib-item-title:hover {
+  color: var(--fonib-orange);
+}
+
+.fonib-item-slug {
+  font-size: 11px;
+  color: var(--theme-elevation-500, #64748b);
+  margin-top: 1px;
+}
+
+.fonib-type-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fonib-type-badge.project {
+  background-color: rgba(239, 146, 36, 0.12);
+  color: #ea580c;
+  border: 1px solid rgba(239, 146, 36, 0.25);
+}
+
+.fonib-type-badge.event {
+  background-color: rgba(75, 155, 196, 0.12);
+  color: #0284c7;
+  border: 1px solid rgba(75, 155, 196, 0.25);
+}
+
+.fonib-type-badge.news {
+  background-color: rgba(31, 157, 107, 0.12);
+  color: #16a34a;
+  border: 1px solid rgba(31, 157, 107, 0.25);
+}
+
+.fonib-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fonib-status-pill.published {
+  background-color: rgba(31, 157, 107, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(31, 157, 107, 0.25);
+}
+
+.fonib-status-pill.upcoming {
+  background-color: rgba(239, 146, 36, 0.1);
+  color: var(--fonib-orange);
+  border: 1px solid rgba(239, 146, 36, 0.25);
+}
+
+.fonib-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.fonib-cat-cell,
+.fonib-date-cell {
+  font-size: 12px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-action-btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.fonib-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: var(--theme-elevation-500, #64748b);
+  text-decoration: none;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  transition: all 0.2s ease;
+}
+
+.fonib-icon-btn:hover {
+  color: var(--fonib-orange);
+  border-color: var(--fonib-orange);
+  background-color: rgba(239, 146, 36, 0.08);
+}
+
+.fonib-table-footer {
+  padding: 14px 24px;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  border-top: 1px solid var(--theme-elevation-150, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-table-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fonib-table-footer-links a {
+  color: var(--fonib-orange);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.fonib-table-footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   PILLARS CARD
+   -------------------------------------------------------------------------- */
+.fonib-pillars-card {
+  padding: 24px;
+  border-radius: 14px;
+  background-color: var(--theme-elevation-50, #ffffff);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.fonib-pillars-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.fonib-pillars-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-pillars-sub {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .fonib-pillars-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.fonib-pillar-item {
+  padding: 14px;
+  border-radius: 10px;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  display: flex;
+  flex-direction: column;
+}
+
+.fonib-pillar-num {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-pillar-val {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--theme-text, #0f172a);
+  margin: 6px 0 2px 0;
+}
+
+.fonib-pillar-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT RAIL CARDS (Guide, Links, System Health)
+   -------------------------------------------------------------------------- */
+.fonib-guide-card,
+.fonib-links-card,
+.fonib-health-card {
+  padding: 24px;
+  border-radius: 14px;
+  background-color: var(--theme-elevation-50, #ffffff);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.fonib-guide-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.fonib-guide-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(239, 146, 36, 0.12);
+  color: var(--fonib-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fonib-guide-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-guide-subtitle {
+  margin: 2px 0 0 0;
+  font-size: 11.5px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-guide-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fonib-guide-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--theme-text, #334155);
+}
+
+.fonib-item-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(239, 146, 36, 0.15);
+  color: var(--fonib-orange);
+  font-weight: 700;
+  font-size: 10.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.fonib-links-title,
+.fonib-health-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-links-subtitle {
+  margin: 2px 0 14px 0;
+  font-size: 11.5px;
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fonib-quick-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: var(--theme-elevation-100, #f8fafc);
+  border: 1px solid var(--theme-elevation-150, #e2e8f0);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--theme-text, #1e293b) !important;
+  transition: all 0.2s ease;
+}
+
+.fonib-quick-link:hover {
+  background-color: rgba(239, 146, 36, 0.08);
+  border-color: var(--fonib-orange);
+  color: var(--fonib-orange) !important;
+  transform: translateX(3px);
+}
+
+.fonib-link-arrow {
+  color: var(--theme-elevation-400, #94a3b8);
+  transition: transform 0.2s ease;
+}
+
+.fonib-quick-link:hover .fonib-link-arrow {
+  color: var(--fonib-orange);
+}
+
+.fonib-health-rows {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fonib-health-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--theme-elevation-150, #f1f5f9);
+}
+
+.fonib-health-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fonib-health-label {
+  color: var(--theme-elevation-500, #64748b);
+}
+
+.fonib-health-val {
+  font-weight: 600;
+  color: var(--theme-text, #0f172a);
+}
+
+.fonib-health-val.green {
+  color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   FORM FIELDS & BUTTONS (News/Projects create & edit views)
+   -------------------------------------------------------------------------- */
+.field-type.text input,
+.field-type.textarea textarea,
+.field-type.select .react-select__control {
+  border-radius: 8px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.field-type.text input:focus,
+.field-type.textarea textarea:focus,
+.field-type.select .react-select__control--is-focused {
+  border-color: var(--fonib-orange) !important;
+  box-shadow: 0 0 0 3px rgba(239, 146, 36, 0.25) !important;
+}
+
+.btn--style-primary {
+  background-color: var(--fonib-orange) !important;
+  border-color: var(--fonib-orange) !important;
+  border-radius: 8px !important;
+}
+
+.btn--style-primary:hover {
+  background-color: var(--fonib-orange-hover) !important;
+  border-color: var(--fonib-orange-hover) !important;
+}

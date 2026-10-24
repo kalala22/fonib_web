@@ -7,11 +7,38 @@ export const News: CollectionConfig = {
     plural: 'Actualités',
   },
   admin: {
+    group: 'Communication',
+    description: 'Articles, communiqués de presse et actualités',
     useAsTitle: 'title',
     defaultColumns: ['title', 'publishedDate', 'updatedAt'],
+    preview: (doc) => (doc?.slug ? `/actualites` : '/actualites'),
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data) {
+          if (!data.slug && data.title) {
+            data.slug = data.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          } else if (data.slug) {
+            data.slug = data.slug
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          }
+        }
+        return data
+      },
+    ],
   },
   fields: [
     {
@@ -28,6 +55,7 @@ export const News: CollectionConfig = {
       label: 'Identifiant URL (slug)',
       admin: {
         position: 'sidebar',
+        description: 'Généré automatiquement depuis le titre si laissé vide',
       },
     },
     {
@@ -58,4 +86,3 @@ export const News: CollectionConfig = {
     },
   ],
 }
-

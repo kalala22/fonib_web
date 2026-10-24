@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, FolderHeart } from 'lucide-react'
 import { PageHero } from '@/components/sections/page-hero'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { brand, projects } from '@/lib/site'
+import { EmptyState } from '@/components/ui/empty-state'
+import { brand } from '@/lib/site'
+import { getMediaUrl, getProjectsList } from '@/lib/payload'
 import { RevealGroup, RevealItem } from '@/components/motion/reveal'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Nos Projets',
@@ -22,25 +26,29 @@ export const metadata: Metadata = {
   },
 }
 
-const projectsJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Projets de la Fondation Nicole Bwatshia',
-  itemListElement: projects.map((p, idx) => ({
-    '@type': 'ListItem',
-    position: idx + 1,
-    name: p.title,
-    description: p.text,
-  })),
-}
+export default async function ProjectsPage() {
+  const projectList = await getProjectsList()
 
-export default function ProjectsPage() {
+  const projectsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Projets de la Fondation Nicole Bwatshia',
+    itemListElement: projectList.map((p, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: p.title,
+      description: p.text,
+    })),
+  }
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
-      />
+      {projectList.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+        />
+      )}
       <PageHero
         eyebrow="Nos Projets"
         title={<>Des actions concrètes sur le <span className="italic text-fonib-orange">terrain</span></>}
@@ -49,34 +57,62 @@ export default function ProjectsPage() {
       />
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <RevealGroup className="grid gap-10 md:grid-cols-3">
-          {projects.map((p) => (
-            <RevealItem key={p.title}>
-            <Card className="group h-full overflow-hidden rounded-3xl border-none bg-white shadow-xl transition hover:-translate-y-2">
-              <div className="relative h-64 overflow-hidden">
-                <Image src={p.image} alt={p.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                <Badge className="absolute left-5 top-5 bg-fonib-orange uppercase tracking-wider text-white">
-                  {p.category}
-                </Badge>
-              </div>
-              <CardHeader>
-                <CardTitle className="font-display text-2xl font-bold">{p.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm leading-relaxed text-fonib-ink/70">{p.text}</p>
-              </CardContent>
-              <CardFooter className="pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-fonib-ink px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-fonib-orange"
-                >
-                  Soutenir ce projet <ArrowRight className="size-4" />
-                </Link>
-              </CardFooter>
-            </Card>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        {projectList.length === 0 ? (
+          <EmptyState
+            icon={FolderHeart}
+            title="Aucun projet publié pour le moment"
+            description="Les contenus seront mis à jour bientôt. Nos équipes préparent la publication de nos initiatives et programmes récents."
+            actionLabel="Faire un don"
+            actionHref="/don"
+          />
+        ) : (
+          <RevealGroup className="grid gap-10 md:grid-cols-3">
+            {projectList.map((p) => {
+              const imageUrl = getMediaUrl(p.image)
+              const projectSlug = (p.slug && p.slug.trim().length > 0) ? p.slug.trim() : String(p.id)
+              const projectUrl = `/projets/${projectSlug}`
+
+              return (
+                <RevealItem key={p.id || projectSlug}>
+                  <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-none bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <Link href={projectUrl} className="relative block h-64 overflow-hidden">
+                      <Image
+                        src={imageUrl}
+                        alt={p.title}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <Badge className="absolute left-5 top-5 bg-fonib-orange uppercase tracking-wider text-white">
+                        {p.category}
+                      </Badge>
+                    </Link>
+                    <CardHeader className="flex-none">
+                      <CardTitle className="font-display text-2xl font-bold">
+                        <Link href={projectUrl} className="transition-colors hover:text-fonib-orange">
+                          {p.title}
+                        </Link>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      <p className="text-sm leading-relaxed text-fonib-ink/70 line-clamp-3">
+                        {p.text}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="pt-2">
+                      <Link
+                        href={projectUrl}
+                        className="inline-flex items-center gap-2 rounded-full bg-fonib-ink px-6 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-fonib-orange"
+                      >
+                        Découvrir ce projet <ArrowRight className="size-4" />
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                </RevealItem>
+              )
+            })}
+          </RevealGroup>
+        )}
       </section>
     </>
   )

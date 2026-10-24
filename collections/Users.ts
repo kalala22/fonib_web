@@ -7,6 +7,8 @@ export const Users: CollectionConfig = {
     plural: 'Utilisateurs',
   },
   admin: {
+    group: 'Paramètres',
+    description: 'Gestion des comptes administrateurs et accès',
     useAsTitle: 'email',
     defaultColumns: ['name', 'email', 'createdAt'],
   },

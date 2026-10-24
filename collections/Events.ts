@@ -7,11 +7,38 @@ export const Events: CollectionConfig = {
     plural: 'Événements',
   },
   admin: {
+    group: 'Actions & Impact',
+    description: 'Campagnes, journées de sensibilisation et rendez-vous',
     useAsTitle: 'title',
     defaultColumns: ['title', 'date', 'place', 'updatedAt'],
+    preview: (doc) => (doc?.slug ? `/evenements` : '/evenements'),
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data) {
+          if (!data.slug && data.title) {
+            data.slug = data.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          } else if (data.slug) {
+            data.slug = data.slug
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          }
+        }
+        return data
+      },
+    ],
   },
   fields: [
     {
@@ -28,6 +55,7 @@ export const Events: CollectionConfig = {
       label: 'Identifiant URL (slug)',
       admin: {
         position: 'sidebar',
+        description: 'Généré automatiquement depuis le titre si laissé vide',
       },
     },
     {
@@ -64,4 +92,3 @@ export const Events: CollectionConfig = {
     },
   ],
 }
-

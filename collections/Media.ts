@@ -6,6 +6,10 @@ export const Media: CollectionConfig = {
     singular: 'Média',
     plural: 'Médias',
   },
+  admin: {
+    group: 'Communication',
+    description: 'Photothèque et ressources visuelles haute résolution',
+  },
   access: {
     read: () => true,
   },

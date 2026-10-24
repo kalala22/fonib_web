@@ -20,6 +20,25 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: ' • Administration FONIB',
+      icons: [{ rel: 'icon', url: '/icon.png' }],
+      openGraph: {
+        images: ['/og-image.png'],
+      },
+    },
+    components: {
+      beforeNav: ['./components/admin/SidebarHeader#SidebarHeader'],
+      graphics: {
+        Logo: './components/admin/Logo#Logo',
+        Icon: './components/admin/Icon#Icon',
+      },
+      views: {
+        dashboard: {
+          Component: './components/admin/CustomDashboard#CustomDashboard',
+        },
+      },
+    },
   },
   collections: [Users, Media, Projects, News, Events],
   editor: lexicalEditor(),

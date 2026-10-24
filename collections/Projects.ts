@@ -7,11 +7,38 @@ export const Projects: CollectionConfig = {
     plural: 'Projets',
   },
   admin: {
+    group: 'Actions & Impact',
+    description: 'Gestion des projets et actions de terrain de la fondation',
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'updatedAt'],
+    preview: (doc) => (doc?.slug ? `/projets/${doc.slug}` : '/projets'),
   },
   access: {
     read: () => true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data) {
+          if (!data.slug && data.title) {
+            data.slug = data.title
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          } else if (data.slug) {
+            data.slug = data.slug
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          }
+        }
+        return data
+      },
+    ],
   },
   fields: [
     {
@@ -28,6 +55,7 @@ export const Projects: CollectionConfig = {
       label: 'Identifiant URL (slug)',
       admin: {
         position: 'sidebar',
+        description: 'Généré automatiquement depuis le titre si laissé vide',
       },
     },
     {
@@ -63,4 +91,3 @@ export const Projects: CollectionConfig = {
     },
   ],
 }
-

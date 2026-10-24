@@ -124,6 +124,8 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Gestion des comptes administrateurs et accès
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -151,6 +153,8 @@ export interface User {
   collection: 'users';
 }
 /**
+ * Photothèque et ressources visuelles haute résolution
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
@@ -196,12 +200,17 @@ export interface Media {
   };
 }
 /**
+ * Gestion des projets et actions de terrain de la fondation
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "projects".
  */
 export interface Project {
   id: number;
   title: string;
+  /**
+   * Généré automatiquement depuis le titre si laissé vide
+   */
   slug: string;
   category: 'Familles' | 'Éducation' | 'Parité' | 'Santé' | 'Autre';
   image?: (number | null) | Media;
@@ -225,12 +234,17 @@ export interface Project {
   createdAt: string;
 }
 /**
+ * Articles, communiqués de presse et actualités
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "news".
  */
 export interface News {
   id: number;
   title: string;
+  /**
+   * Généré automatiquement depuis le titre si laissé vide
+   */
   slug: string;
   publishedDate?: string | null;
   image?: (number | null) | Media;
@@ -254,12 +268,17 @@ export interface News {
   createdAt: string;
 }
 /**
+ * Campagnes, journées de sensibilisation et rendez-vous
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "events".
  */
 export interface Event {
   id: number;
   title: string;
+  /**
+   * Généré automatiquement depuis le titre si laissé vide
+   */
   slug: string;
   date: string;
   eventDate?: string | null;
